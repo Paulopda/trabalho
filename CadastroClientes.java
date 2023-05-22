@@ -25,40 +25,44 @@ public class CadastroClientes {
         }
     }
 
-    public static void main(String[] args) {
-        CadastroClientes cadastro = new CadastroClientes();
-        Scanner scanner = new Scanner(System.in);
+// ...
 
-        boolean executando = true;
-        while (executando) {
-            System.out.println("1 - Cadastrar cliente");
-            System.out.println("2 - Exibir clientes");
-            System.out.println("3 - Sair");
-            System.out.print("Escolha uma opção: ");
-            int opcao = scanner.nextInt();
+public static void main(String[] args) {
+    CadastroClientes cadastro = new CadastroClientes();
+    Scanner scanner = new Scanner(System.in);
 
-            switch (opcao) {
-                case 1:
-                    System.out.print("Digite o nome do cliente: ");
-                    String nome = scanner.next();
-                    System.out.print("Digite o endereço do cliente: ");
-                    String endereco = scanner.next();
-                    System.out.print("Digite o telefone do cliente: ");
-                    String telefone = scanner.next();
-                    cadastro.cadastrarCliente(nome, endereco, telefone);
-                    break;
-                case 2:
-                    cadastro.exibirClientes();
-                    break;
-                case 3:
-                    executando = false;
-                    break;
-                default:
-                    System.out.println("Opção inválida!");
-                    break;
-            }
+    boolean executando = true;
+    while (executando) {
+        System.out.println("1 - Cadastrar cliente");
+        System.out.println("2 - Exibir clientes");
+        System.out.println("3 - Sair");
+        System.out.print("Escolha uma opção: ");
+        int opcao = scanner.nextInt();
+        scanner.nextLine(); // Consumir a quebra de linha após a leitura do número
+
+        switch (opcao) {
+            case 1:
+                System.out.print("Digite o nome do cliente: ");
+                String nome = scanner.nextLine();
+                System.out.print("Digite o endereço do cliente: ");
+                String endereco = scanner.nextLine();
+                System.out.print("Digite o telefone do cliente: ");
+                String telefone = scanner.nextLine();
+                cadastro.cadastrarCliente(nome, endereco, telefone);
+                break;
+            case 2:
+                cadastro.exibirClientes();
+                break;
+            case 3:
+                executando = false;
+                break;
+            default:
+                System.out.println("Opção inválida!");
+                break;
         }
-        System.out.println("Encerrando o programa...");
-        scanner.close();
     }
+    System.out.println("Encerrando o programa...");
+    scanner.close();
 }
+
+// ...
