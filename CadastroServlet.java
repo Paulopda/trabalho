@@ -16,9 +16,9 @@ public class CadastroServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
     // Configurações do banco de dados
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/seu_banco_de_dados";
-    private static final String DB_USER = "seu_usuario";
-    private static final String DB_PASSWORD = "sua_senha";
+    private static final String DB_URL = "jdbc:mysql://localhost:3306/clientes";
+    private static final String DB_USER = "admin";
+    private static final String DB_PASSWORD = "12345678";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nome = request.getParameter("nome");
